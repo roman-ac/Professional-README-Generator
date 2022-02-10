@@ -53,21 +53,33 @@ const questions = () => {
             message: 'What is your e-mail?',
             type: 'input'
         },
-        {
-            name: 'fileName',
-            message: 'What do you want to call this readme?',
-            type: 'input'
-        },
+        
     ])
 }
 
 // TODO: Create a function to write README file
+
 function writeToFile(fileName, data) {
-    
+   // questions()
+   // .then((answers)=>fs.writeFileSync('README.md', generateMarkdown(answers)))
+   // .then (() => console.log('success'))
+   // .catch((err) => console.error(err));
+
+    fs.writeFile(fileName, data, (err) =>
+      err ? console.error(err) : console.log('success')
+    );
 }
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    // writeToFile();
+    questions()
+   .then((answers)=> writeToFile('README.md', generateMarkdown(answers)))
+    .then (() => console.log('success'))
+    .catch((err) => console.error(err));
+
+
+}
 
 // Function call to initialize app
 init();
