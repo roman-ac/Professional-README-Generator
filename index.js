@@ -60,24 +60,20 @@ const questions = () => {
 // TODO: Create a function to write README file
 
 function writeToFile(fileName, data) {
-   // questions()
-   // .then((answers)=>fs.writeFileSync('README.md', generateMarkdown(answers)))
-   // .then (() => console.log('success'))
-   // .catch((err) => console.error(err));
+    questions()
+    .then((answers)=>fs.writeFileSync('README.md', generateMarkdown(answers)))
+    .then (() => console.log('success'))
+    .catch((err) => console.error(err));
 
-    fs.writeFile(fileName, data, (err) =>
-      err ? console.error(err) : console.log('success')
-    );
+    // fs.writeFile(fileName, data, (err) =>
+    // err ? console.error(err) : console.log('success')
+    // );
 }
 
 // TODO: Create a function to initialize app
 function init() {
-    // writeToFile();
-    questions()
-   .then((answers)=> writeToFile('README.md', generateMarkdown(answers)))
-    .then (() => console.log('success'))
-    .catch((err) => console.error(err));
-
+    writeToFile();
+    
 
 }
 

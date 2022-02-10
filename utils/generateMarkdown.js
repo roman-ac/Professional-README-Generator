@@ -60,9 +60,9 @@ function generateMarkdown(data) {
   * [Description](#description)
   * [Installation](#installation)
   * [Usage](#usage)
-  * [Contribution-Guidelines](#contributing)
-  * [Test](#testing)
-  * [Any-Questions?](#username)
+  * [Contribution Guidelines](#contribution-guideline)
+  * [Test](#test)
+  * [Any Questions?](#any-questions)
   ## License
   ${renderLicenseSection(data.license)}
   ${renderLicenseLink(data.license)}
